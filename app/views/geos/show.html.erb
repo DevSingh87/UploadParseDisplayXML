@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <h2><%= @geo.title %></h2>
+</p>
+<%= link_to 'Edit', edit_geo_path(@geo), :class=>"btn btn-warning" %> |
+<%= link_to 'Back', geos_path, :class=>"btn btn-info" %>
+<br/>
+<%= paginate @facilities %>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Site Name</th>
+            <th>Address</th>
+            <th>Locality Name</th>
+            <th>State Code</th>
+            <th>Zip Code</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @facilities.each do |facility| %>
+            <tr>
+                <td><%= facility.id %></td>
+                <td><%= facility.site_name %></td>
+                <td><%= facility.address %></td>
+                <td><%= facility.locality_name %></td>
+                <td><%= facility.state_code %></td>
+                <td><%= facility.zip_code %></td>
+                <td><%= facility.latitude %></td>
+                <td><%= facility.longitude %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
