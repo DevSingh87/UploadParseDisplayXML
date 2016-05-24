@@ -40,5 +40,12 @@ gem 'spring',        group: :development
 
 gem 'nokogiri', '~> 1.6.3.1'
 gem 'paperclip', '~> 4.2.0'
+gem 'aws-sdk', '< 2.0'
 gem 'zip-zip'
 gem 'kaminari'
+
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+  gem 'puma',           '2.11.1'
+end

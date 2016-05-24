@@ -5,7 +5,7 @@ class Geo < ActiveRecord::Base
     require 'zip/zip'
 
 	has_many :facilities
-	has_attached_file :tracker, :path => "ParseUploadXML/public/paperclip/:filename"
+	has_attached_file :tracker
 	validates_attachment_content_type :tracker, :content_type => %w(text/xml text/plain application/zip)
 
 	before_save :parse_file
