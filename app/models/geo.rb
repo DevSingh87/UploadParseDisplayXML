@@ -6,6 +6,7 @@ class Geo < ActiveRecord::Base
 
 	has_many :facilities
 	has_attached_file :tracker
+	validates :tracker, presence: :true
 	validates_attachment_content_type :tracker, :content_type => %w(text/xml text/plain application/zip)
 
 	before_save :parse_file
